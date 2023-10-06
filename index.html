@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>級からミリ</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <h1>級からミリ</h1>
+
+      <input
+        type="number"
+        id="centimeters"
+        name="text"
+        class="input"
+        pattern="\d+"
+        placeholder="級数を入力してください"
+      />
+      <button onclick="convert()" class="button type1">
+        <span class="btn-txt">転換</span>
+      </button>
+
+      <div id="txt1">
+        <p>結果：<span id="millimeters"></span> ミリメートル</p>
+      </div>
+    </div>
+
+    <script>
+      function convert() {
+        var centimeters = parseFloat(
+          document.getElementById("centimeters").value
+        );
+
+        if (!isNaN(centimeters)) {
+          var millimeters = centimeters * 0.25;
+          document.getElementById("millimeters").innerText = millimeters;
+        } else {
+          alert("请输入有效的数字");
+        }
+      }
+    </script>
+  </body>
+</html>
